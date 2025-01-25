@@ -22,7 +22,7 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(item.formattedDate)
                     }
                     .disabled(isLoading)
                     // Trigger load on last item

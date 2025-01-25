@@ -10,9 +10,14 @@ import SwiftData
 
 @Model
 final class Item {
-    var timestamp: Date
-    
-    init(timestamp: Date) {
-        self.timestamp = timestamp
-    }
+  var timestamp: Date
+  var formattedDate: String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd, HH:mm"
+    return dateFormatter.string(from: timestamp)
+  }
+  
+  init(timestamp: Date) {
+    self.timestamp = timestamp
+  }
 }
